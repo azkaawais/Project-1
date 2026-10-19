@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Student Learning Hub — online courses, student support, and career guidance.">
+  <title>Student Learning Hub</title>
+  <style>
+    :root { --navy:#123d6b; --blue:#0873d1; --ink:#102b4a; --pale:#eaf6ff; --line:#c9e0ef; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#edf3f7; color:var(--ink); font-family:Arial, Helvetica, sans-serif; }
+    .page { width:min(1100px, calc(100% - 32px)); margin:24px auto; overflow:hidden; border:1px solid #b8d0df; border-radius:13px; background:white; box-shadow:0 12px 35px #183a5818; }
+    header { min-height:66px; padding:0 28px; display:flex; align-items:center; justify-content:space-between; background:linear-gradient(100deg,#174e80,#0d315c); color:white; }
+    .brand { display:flex; align-items:center; gap:12px; font-weight:700; font-size:20px; letter-spacing:.1px; }
+    .brand-mark { font-size:29px; line-height:1; }
+    nav { display:flex; gap:27px; }
+    nav a { color:#f3f8ff; text-decoration:none; font-size:14px; font-weight:600; }
+    nav a:hover { color:#a8ddff; }
+    .hero { min-height:325px; display:flex; align-items:center; padding:42px 5%; background:linear-gradient(90deg,#d9efff 0%,#e6f5ff 43%,#e6f5ffad 61%,#112d4320 100%), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1800&q=85') center 53%/cover; }
+    .hero-copy { max-width:510px; }
+    h1 { margin:0 0 16px; color:#123f70; font-size:clamp(34px,4.5vw,51px); line-height:1.05; letter-spacing:-1.2px; }
+    .hero p { max-width:440px; margin:0 0 23px; color:#294663; font-size:17px; line-height:1.55; }
+    .button { display:inline-block; border-radius:7px; padding:13px 22px; background:#0872d2; color:white; font-size:15px; font-weight:700; text-decoration:none; box-shadow:0 4px 10px #0872d233; }
+    .button:hover { background:#075ca9; }
+    .content { padding:28px 4% 26px; }
+    .feature-video { display:grid; grid-template-columns:1fr 1fr; gap:34px; padding-bottom:27px; border-bottom:1px solid var(--line); }
+    h2 { margin:0 0 16px; font-size:23px; color:#102f52; }
+    .features { padding-right:28px; border-right:1px solid var(--line); }
+    .feature-list { list-style:none; margin:0; padding:0; display:grid; gap:12px; }
+    .feature-list li { display:flex; align-items:center; gap:14px; color:#23415e; font-size:16px; }
+    .feature-icon { width:34px; text-align:center; color:#174b7b; font-size:24px; }
+    .video { position:relative; height:208px; overflow:hidden; border-radius:8px; background:linear-gradient(0deg,#071f39a8,transparent 45%),url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1000&q=85') center/cover; box-shadow:0 4px 12px #183a5820; }
+    .play { position:absolute; left:50%; top:47%; transform:translate(-50%,-50%); width:54px; height:54px; display:grid; place-items:center; padding-left:4px; border-radius:50%; color:white; background:#103b66d9; font-size:22px; }
+    .video-controls { position:absolute; right:12px; bottom:10px; left:12px; display:flex; align-items:center; gap:10px; color:white; font-size:12px; }
+    .track { flex:1; height:4px; border-radius:4px; background:#ffffff80; }
+    .track::before { content:""; display:block; width:23%; height:100%; border-radius:4px; background:white; }
+    .students { padding-top:22px; }
+    .students h2 { margin-bottom:13px; }
+    table { width:100%; border-collapse:collapse; text-align:left; font-size:15px; }
+    th,td { padding:10px 14px; border:1px solid #c7dce9; }
+    th { background:#dceffa; color:#143c62; }
+    tbody tr:nth-child(even) { background:#f5faff; }
+    footer { padding:16px; background:linear-gradient(100deg,#174e80,#0d315c); color:#edf6ff; text-align:center; font-size:13px; }
+    @media (max-width:700px) { .page { width:calc(100% - 20px); margin:10px auto; } header { padding:16px 20px; align-items:flex-start; flex-direction:column; gap:14px; } nav { width:100%; justify-content:space-between; gap:10px; } .hero { min-height:300px; padding:32px 7%; background-position:center; } .feature-video { grid-template-columns:1fr; gap:24px; } .features { padding:0 0 22px; border:0; border-bottom:1px solid var(--line); } .video { height:220px; } .content { padding:24px 5%; } table { font-size:13px; } th,td { padding:9px 7px; } }
+    @media (max-width:420px) { .brand { font-size:18px; } nav a { font-size:12px; } h1 { font-size:34px; } .hero p { font-size:15px; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <a class="brand" href="#home" aria-label="Student Learning Hub home"><span class="brand-mark" aria-hidden="true">🎓</span><span>Student Learning Hub</span></a>
+      <nav aria-label="Main navigation"><a href="#home">Home</a><a href="#about">About</a><a href="#courses">Courses</a><a href="#contact">Contact</a></nav>
+    </header>
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <h1>Learn Today<br>Build Your Future</h1>
+          <p>We provide online courses, career guidance and support to help you grow.</p>
+          <a class="button" href="#courses">Explore Courses</a>
+        </div>
+      </section>
+      <div class="content">
+        <section class="feature-video" id="about">
+          <div class="features">
+            <h2>Our Features</h2>
+            <ul class="feature-list">
+              <li><span class="feature-icon" aria-hidden="true">🎓</span>Online Courses</li>
+              <li><span class="feature-icon" aria-hidden="true">👥</span>Student Support</li>
+              <li><span class="feature-icon" aria-hidden="true">📊</span>Career Guidance</li>
+              <li><span class="feature-icon" aria-hidden="true">🌿</span>Modern Environment</li>
+            </ul>
+          </div>
+          <div>
+            <h2>Watch Our Video</h2>
+            <div class="video" role="img" aria-label="Scenic campus video preview"><span class="play" aria-hidden="true">▶</span><div class="video-controls"><span>▶</span><span>0:00 / 1:30</span><span class="track"></span><span>🔊</span><span>⛶</span></div></div>
+          </div>
+        </section>
+        <section class="students" id="courses">
+          <h2>Student Information</h2>
+          <table>
+            <thead><tr><th scope="col">ID</th><th scope="col">Name</th><th scope="col">Department</th><th scope="col">Semester</th></tr></thead>
+            <tbody><tr><td>101</td><td>Ali Raza</td><td>CS</td><td>4</td></tr><tr><td>102</td><td>Ayesha Khan</td><td>SE</td><td>4</td></tr><tr><td>103</td><td>Hassan Shah</td><td>IT</td><td>3</td></tr></tbody>
+          </table>
+        </section>
+      </div>
+    </main>
+    <footer id="contact">© 2025 Student Learning Hub. All rights reserved.</footer>
+  </div>
+</body>
+</html>
